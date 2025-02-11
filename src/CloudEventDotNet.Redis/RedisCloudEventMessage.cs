@@ -31,6 +31,8 @@ internal sealed class RedisCloudEventMessage(
         }
     }
     public ValueTask WaitToCompleteAsync() => _waiter.Task;
+    
+    public string? Id { get; }
 
     private readonly CancellationTokenSource _cancellationTokenSource = new();
 

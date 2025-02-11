@@ -19,6 +19,9 @@ internal sealed class KafkaCloudEventMessage(
     private int _started = 0;
     public bool Started => _started == 1;
     public ConsumeResult<byte[], byte[]> Message => message;
+    
+    public string? Id { get; }
+    
     void IThreadPoolWorkItem.Execute() => Start();
     public void Start()
     {
